@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PHONE_PRIMARY = "01 43 24 36 27";
 const PHONE_PRIMARY_RAW = "+33143243627";
 const PHONE_MOBILE = "07 84 87 93 17";
@@ -6,8 +8,7 @@ const EMAIL = "garagedelapaix94@gmail.com";
 const ADDRESS_LINE_1 = "99 bis rue de la Paix";
 const ADDRESS_LINE_2 = "94170 Le Perreux-sur-Marne";
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1600&q=80";
+const LOGO_SRC = "/logo-garage-paix.jpg";
 
 type IconProps = { className?: string };
 
@@ -204,12 +205,16 @@ export default function Home() {
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 glass">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-2 font-black tracking-tight">
-            <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 grid place-items-center text-white">
-              <IconWrench className="w-5 h-5" />
-            </span>
-            <span className="text-white text-sm sm:text-base">
-              Garage de <span className="text-orange-400">la Paix</span>
+          <a href="#top" className="flex items-center font-black tracking-tight" aria-label="Garage de la Paix — Accueil">
+            <span className="inline-flex items-center bg-white rounded-lg px-2.5 py-1 shadow-sm">
+              <Image
+                src={LOGO_SRC}
+                alt="Garage de la Paix"
+                width={1600}
+                height={680}
+                priority
+                className="h-7 sm:h-8 w-auto"
+              />
             </span>
           </a>
           <nav className="hidden md:flex items-center gap-7 text-sm text-white/70">
@@ -232,65 +237,79 @@ export default function Home() {
       {/* HERO */}
       <section id="top" className="relative pt-16">
         <div className="absolute inset-0 bg-grid opacity-40" />
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url('${HERO_IMG}')` }}
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0b1220]/80 to-[#0b1220]" />
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-orange-500/20 blur-[120px]" />
         <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-blue-600/20 blur-[120px]" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32 lg:py-40">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-white/10 text-xs sm:text-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-white/80">Ouvert aujourd'hui — 8h30 → 19h</span>
-              <span className="hidden sm:inline text-white/30">·</span>
-              <span className="hidden sm:inline text-white/60">Le Perreux-sur-Marne (94170)</span>
-            </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 lg:py-28">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-7 order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-white/10 text-xs sm:text-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-white/80">Ouvert aujourd'hui — 8h30 → 19h</span>
+                <span className="hidden sm:inline text-white/30">·</span>
+                <span className="hidden sm:inline text-white/60">Le Perreux-sur-Marne (94170)</span>
+              </div>
 
-            <h1 className="text-balance text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05]">
-              Votre voiture mérite<br />
-              <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                un garagiste de confiance.
-              </span>
-            </h1>
+              <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05]">
+                Votre voiture mérite<br />
+                <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                  un garagiste de confiance.
+                </span>
+              </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-white/70 max-w-xl text-balance">
-              Entretien, réparation et diagnostic auto au Perreux-sur-Marne.
-              Toutes marques, devis gratuit, travail soigné depuis plus de 20 ans.
-            </p>
+              <p className="mt-6 text-lg sm:text-xl text-white/70 max-w-xl text-balance">
+                Entretien, réparation et diagnostic auto au Perreux-sur-Marne.
+                Toutes marques, devis gratuit, travail soigné depuis plus de 20 ans.
+              </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a
-                href={`tel:${PHONE_PRIMARY_RAW}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-br from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 transition rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-orange-500/30"
-              >
-                <IconPhone className="w-5 h-5" />
-                Appeler le {PHONE_PRIMARY}
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 glass border border-white/15 hover:border-orange-400/50 hover:bg-white/10 transition rounded-xl font-semibold text-base sm:text-lg"
-              >
-                Demander un devis gratuit
-              </a>
-            </div>
+              <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a
+                  href={`tel:${PHONE_PRIMARY_RAW}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-br from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 transition rounded-xl font-bold text-base sm:text-lg shadow-xl shadow-orange-500/30"
+                >
+                  <IconPhone className="w-5 h-5" />
+                  Appeler le {PHONE_PRIMARY}
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 glass border border-white/15 hover:border-orange-400/50 hover:bg-white/10 transition rounded-xl font-semibold text-base sm:text-lg"
+                >
+                  Demander un devis gratuit
+                </a>
+              </div>
 
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-white/60">
-              <div className="flex items-center gap-2">
-                <div className="flex text-orange-400">
-                  {[...Array(5)].map((_, i) => <IconStar key={i} className="w-4 h-4" />)}
+              <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-white/60">
+                <div className="flex items-center gap-2">
+                  <div className="flex text-orange-400">
+                    {[...Array(5)].map((_, i) => <IconStar key={i} className="w-4 h-4" />)}
+                  </div>
+                  <span>4,9 / 5 sur Google</span>
                 </div>
-                <span>4,9 / 5 sur Google</span>
+                <div className="flex items-center gap-2">
+                  <IconCheck className="w-4 h-4 text-emerald-400" />
+                  <span>Devis gratuit & sans engagement</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <IconCheck className="w-4 h-4 text-emerald-400" />
+                  <span>Toutes marques</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <IconCheck className="w-4 h-4 text-emerald-400" />
-                <span>Devis gratuit & sans engagement</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <IconCheck className="w-4 h-4 text-emerald-400" />
-                <span>Toutes marques</span>
+            </div>
+
+            <div className="lg:col-span-5 order-1 lg:order-2">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-orange-500/30 to-red-600/20 blur-2xl rounded-[2rem]" />
+                <div className="relative rounded-3xl bg-white p-6 sm:p-10 shadow-2xl ring-1 ring-orange-500/20">
+                  <Image
+                    src={LOGO_SRC}
+                    alt="Logo officiel — Garage de la Paix"
+                    width={1600}
+                    height={680}
+                    priority
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
