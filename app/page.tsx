@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { QuoteFormButton, StickyQuoteButton } from "./QuoteForm";
 
 const PHONE_PRIMARY = "01 43 24 36 27";
 const PHONE_PRIMARY_RAW = "+33143243627";
@@ -272,12 +273,10 @@ export default function Home() {
                   <IconPhone className="w-5 h-5" />
                   Appeler le {PHONE_PRIMARY}
                 </a>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 glass border border-white/15 hover:border-orange-400/50 hover:bg-white/10 transition rounded-xl font-semibold text-base sm:text-lg"
-                >
-                  Demander un devis gratuit
-                </a>
+                <QuoteFormButton
+                  triggerLabel="Demander un devis gratuit"
+                  triggerClassName="inline-flex items-center justify-center gap-2 px-6 py-4 glass border border-white/15 hover:border-orange-400/50 hover:bg-white/10 transition rounded-xl font-semibold text-base sm:text-lg cursor-pointer"
+                />
               </div>
 
               <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-white/60">
@@ -651,6 +650,8 @@ export default function Home() {
           <div>Site démo réalisé avec soin 🔧</div>
         </div>
       </footer>
+
+      <StickyQuoteButton />
     </main>
   );
 }
