@@ -383,17 +383,17 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-5">
           {[
             {
-              src: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=1100&q=85",
+              src: "https://images.pexels.com/photos/13065691/pexels-photo-13065691.jpeg?auto=compress&cs=tinysrgb&w=1100",
               title: "Vidange & entretien",
               desc: "Huile constructeur, filtres d'origine, contrôle complet selon le carnet d'entretien.",
             },
             {
-              src: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1100&q=85",
+              src: "https://images.pexels.com/photos/6870318/pexels-photo-6870318.jpeg?auto=compress&cs=tinysrgb&w=1100",
               title: "Pneus & équilibrage",
               desc: "Montage et équilibrage toutes marques, parallélisme contrôlé au banc.",
             },
             {
-              src: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1100&q=85",
+              src: "https://images.pexels.com/photos/3807329/pexels-photo-3807329.jpeg?auto=compress&cs=tinysrgb&w=1100",
               title: "Mécanique certifiée",
               desc: "Distribution, embrayage, freinage — réparation garantie atelier.",
             },
@@ -434,7 +434,7 @@ export default function Home() {
                 className="w-full h-full bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=85')",
+                    "url('https://images.pexels.com/photos/4489710/pexels-photo-4489710.jpeg?auto=compress&cs=tinysrgb&w=1200')",
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-[#0b1220]/30 to-transparent" />
