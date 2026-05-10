@@ -380,57 +380,44 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-5">
           {[
             {
-              src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=80",
-              title: "Diagnostic moteur",
-              desc: "Analyse complète multi-marques avec valise constructeur.",
+              src: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?auto=format&fit=crop&w=1100&q=85",
+              title: "Vidange & entretien",
+              desc: "Huile constructeur, filtres d'origine, contrôle complet selon le carnet d'entretien.",
             },
             {
-              src: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80",
-              title: "Réparation certifiée",
-              desc: "Travail soigné, pièces de qualité, garantie atelier.",
+              src: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1100&q=85",
+              title: "Pneus & équilibrage",
+              desc: "Montage et équilibrage toutes marques, parallélisme contrôlé au banc.",
             },
             {
-              src: "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=900&q=80",
-              title: "Atelier équipé",
-              desc: "Pont élévateur, outillage pro, tout pour intervenir vite.",
-            },
-            {
-              src: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=900&q=80",
-              title: "Mécanique de précision",
-              desc: "Distribution, embrayage, injection — gestes maîtrisés.",
-            },
-            {
-              src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80",
-              title: "Toutes marques",
-              desc: "Françaises, allemandes, asiatiques — on s'adapte à votre auto.",
-            },
-            {
-              src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80",
-              title: "Devis transparent",
-              desc: "Détaillé, expliqué, sans surprise. Le tarif annoncé est le tarif facturé.",
+              src: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1100&q=85",
+              title: "Mécanique certifiée",
+              desc: "Distribution, embrayage, freinage — réparation garantie atelier.",
             },
           ].map((item) => (
             <div
               key={item.title}
-              className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-orange-400/40 transition"
+              className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-orange-400/40 transition shadow-2xl"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden">
                 <div
-                  className="w-full h-full bg-cover bg-center group-hover:scale-105 transition duration-500"
+                  className="w-full h-full bg-cover bg-center group-hover:scale-105 transition duration-700"
                   style={{ backgroundImage: `url('${item.src}')` }}
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-[#0b1220]/40 to-transparent" />
-              <div className="absolute bottom-0 inset-x-0 p-5">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full glass border border-white/15 text-[11px] mb-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-[#0b1220]/30 to-transparent" />
+              <div className="absolute top-5 left-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px]">
                   <IconShield className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-white/80 uppercase tracking-widest font-semibold">Certifié</span>
+                  <span className="text-white uppercase tracking-widest font-semibold">Certifié</span>
                 </div>
-                <div className="text-lg font-bold">{item.title}</div>
-                <div className="text-sm text-white/70 mt-1">{item.desc}</div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 p-6">
+                <div className="text-2xl font-black mb-2">{item.title}</div>
+                <div className="text-sm text-white/80 leading-relaxed">{item.desc}</div>
               </div>
             </div>
           ))}
@@ -447,16 +434,22 @@ export default function Home() {
                 className="w-full h-full bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1486496146582-9ffcd0b2b2b7?auto=format&fit=crop&w=900&q=80')",
+                    "url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=85')",
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-white/15 text-xs">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-[#0b1220]/30 to-transparent" />
+              <div className="absolute top-6 left-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  Mécanicien certifié
+                  <span className="font-semibold">Mécanicien certifié</span>
                 </div>
-                <div className="mt-3 text-2xl font-black">Un atelier à taille humaine.</div>
+              </div>
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="text-5xl sm:text-6xl font-black bg-gradient-to-br from-orange-300 to-orange-500 bg-clip-text text-transparent leading-none">
+                  +20 ans
+                </div>
+                <div className="mt-2 text-lg font-bold">d'expérience au Perreux.</div>
+                <div className="mt-1 text-sm text-white/70">Toutes marques · Devis gratuit · Garantie atelier</div>
               </div>
             </div>
           </div>
