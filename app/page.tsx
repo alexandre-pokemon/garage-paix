@@ -219,6 +219,7 @@ export default function Home() {
           </a>
           <nav className="hidden md:flex items-center gap-7 text-sm text-white/70">
             <a href="#services" className="hover:text-white transition">Services</a>
+            <a href="#savoir-faire" className="hover:text-white transition">Savoir-faire</a>
             <a href="#about" className="hover:text-white transition">Le garage</a>
             <a href="#avis" className="hover:text-white transition">Avis</a>
             <a href="#contact" className="hover:text-white transition">Contact</a>
@@ -360,6 +361,76 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-bold mb-2">{title}</h3>
                 <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SAVOIR-FAIRE / ENGINE GALLERY */}
+      <section id="savoir-faire" className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+        <div className="max-w-2xl mb-14">
+          <div className="text-orange-400 text-sm font-semibold uppercase tracking-widest mb-3">Notre savoir-faire</div>
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-balance">
+            Du moteur à la pièce,<br />on connaît chaque détail.
+          </h2>
+          <p className="mt-4 text-white/60 text-lg">
+            Mécanicien certifié, plus de 20 ans d'expérience sur toutes marques.
+            Diagnostic précis, réparation propre, devis clair.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            {
+              src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=80",
+              title: "Diagnostic moteur",
+              desc: "Analyse complète multi-marques avec valise constructeur.",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80",
+              title: "Réparation certifiée",
+              desc: "Travail soigné, pièces de qualité, garantie atelier.",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1632823469650-89b1bb18065f?auto=format&fit=crop&w=900&q=80",
+              title: "Atelier équipé",
+              desc: "Pont élévateur, outillage pro, tout pour intervenir vite.",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=900&q=80",
+              title: "Mécanique de précision",
+              desc: "Distribution, embrayage, injection — gestes maîtrisés.",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80",
+              title: "Toutes marques",
+              desc: "Françaises, allemandes, asiatiques — on s'adapte à votre auto.",
+            },
+            {
+              src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80",
+              title: "Devis transparent",
+              desc: "Détaillé, expliqué, sans surprise. Le tarif annoncé est le tarif facturé.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-orange-400/40 transition"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <div
+                  className="w-full h-full bg-cover bg-center group-hover:scale-105 transition duration-500"
+                  style={{ backgroundImage: `url('${item.src}')` }}
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b1220] via-[#0b1220]/40 to-transparent" />
+              <div className="absolute bottom-0 inset-x-0 p-5">
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full glass border border-white/15 text-[11px] mb-2">
+                  <IconShield className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="text-white/80 uppercase tracking-widest font-semibold">Certifié</span>
+                </div>
+                <div className="text-lg font-bold">{item.title}</div>
+                <div className="text-sm text-white/70 mt-1">{item.desc}</div>
               </div>
             </div>
           ))}
